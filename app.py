@@ -89,6 +89,8 @@ def predict():
 	return treatment_likelihood
 
 if __name__ == "__main_":
-	app.debug = False
-	from werkzeug.serving import run_simple
-	run_simple("localhost", 5000, app)
+	# app.debug = False
+	# from werkzeug.serving import run_simple
+	# run_simple("localhost", 5000, app)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
